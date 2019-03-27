@@ -48,7 +48,6 @@ NSString *const CUSTOM_SELECTOR = @"_CUSTOM_SELECTOR_";
         [self addSubview:_backedTextInputView];
         
         UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-        longPressGesture.minimumPressDuration = 0.15;
         
         UITapGestureRecognizer *tapGesture = [ [UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         tapGesture.numberOfTapsRequired = 2;
