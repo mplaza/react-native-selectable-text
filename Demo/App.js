@@ -44,6 +44,12 @@ export default class App extends Component<Props> {
           onSelection={console.log}
           style={styles.instructions}
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend laoreet risus nec accumsan. In bibendum urna id ante vehicula auctor. Donec ipsum nisi, malesuada quis erat ac, molestie facilisis lacus. Vestibulum a erat dui. In imperdiet, purus at venenatis fermentum, dui neque congue est, in suscipit metus magna malesuada ex. In hendrerit tincidunt mi, vel rhoncus eros dignissim non. Nulla tincidunt, tortor et dictum fermentum, sapien leo blandit nunc, nec rutrum nulla libero nec elit. Sed vitae urna sed eros volutpat venenatis. Nulla finibus velit ac odio elementum pharetra. Ut mollis metus est, vitae blandit urna venenatis at."
+          highlights={[
+            { start: 0, end: 5 },
+            { start: 10, end: 19 },
+            { start: 50, end: 55 }
+          ]}
+          highlightColor={[255, 0, 0]}
         />
         <SelectableText
           selectable={true}

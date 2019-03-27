@@ -118,7 +118,22 @@ NSString *const CUSTOM_SELECTOR = @"_CUSTOM_SELECTOR_";
 - (void)setAttributedText:(NSAttributedString *)attributedText
 {
     if (self.value) {
-        NSAttributedString *str = [[NSAttributedString alloc] initWithString:self.value attributes:self.textAttributes.effectiveTextAttributes];
+        NSMutableAttributedString *str = [ [NSMutableAttributedString alloc] initWithString:self.value attributes:self.textAttributes.effectiveTextAttributes];
+        
+        double red = [self.highlightColor[0] doubleValue];
+        double green = [self.highlightColor[1] doubleValue];
+        double blue = [self.highlightColor[2] doubleValue];
+        
+        for (NSDictionary *item in self.highlights) {
+            NSUInteger start = [[item objectForKey:@"start"] unsignedIntegerValue];
+            NSUInteger end = [[item objectForKey:@"end"] unsignedIntegerValue];
+            NSUInteger contentLength = [self.value length];
+            
+            if (start >= end) continue;
+            if (start > contentLength - 1 || end > contentLength - 1) continue;
+            
+            [str addAttribute:NSBackgroundColorAttributeName value:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f] range:NSMakeRange(start, end - start)];
+        }
         
         [super setAttributedText:str];
     } else {
