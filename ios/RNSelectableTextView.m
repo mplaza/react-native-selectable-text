@@ -1,8 +1,8 @@
 
-#import <RCTText/RCTTextSelection.h>
-#import <RCTText/RCTUITextView.h>
+#import <RCTTextSelection.h>
+#import <RCTUITextView.h>
 #import "RNSelectableTextView.h"
-#import <RCTText/RCTTextAttributes.h>
+#import <RCTTextAttributes.h>
 
 #import <React/RCTUtils.h>
 
