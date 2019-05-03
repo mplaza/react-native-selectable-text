@@ -1,1 +1,1 @@
-export { SelectableText as SelectableText } from './Demo/SelectableText'
+export { SelectableTextGroup } from './Demo/SelectableText'
