@@ -57,7 +57,6 @@ export const SelectableTextGroup = ({
   });
 
   const onPressText = e => {
-    console.log("press text!!");
     const { clickedRangeStart, clickedRangeEnd } = e.nativeEvent;
 
     let onPressFunction;
