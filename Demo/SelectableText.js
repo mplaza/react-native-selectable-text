@@ -52,9 +52,11 @@ export const SelectableTextGroup = ({
     return { onPress, rangeStart, rangeEnd };
   };
 
-  const childOnPressFunctions = children.map(child => {
-    return extractTextProperties(child.props);
-  });
+  const childOnPressFunctions = Array.isArray(children)
+    ? children.map(child => {
+        return extractTextProperties(child.props);
+      })
+    : extractTextProperties(children);
 
   const onPressText = e => {
     const { clickedRangeStart, clickedRangeEnd } = e.nativeEvent;
